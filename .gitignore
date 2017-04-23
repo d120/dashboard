@@ -1,3 +1,7 @@
+# Bower
+/src/main/resources/public
+
+# Maven
 target/
 !.mvn/wrapper/maven-wrapper.jar
 
