@@ -1,0 +1,53 @@
+.d120-busstop-icon {
+    position: relative;
+    top: -0.1em;
+    height: 1em;
+    width: 1em;
+}
+
+.d120-departure {
+    padding: 5px;
+}
+.d120-departure .well {
+    margin: 0;
+    padding: 0.5em;
+}
+.d120-departure.default {
+    opacity: 0.5;
+}
+
+.d120-transport-icon {
+    display: inline-block;
+    height: 1.2em;
+    width: 1.2em;
+    margin-top: -0.1em;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: 0.1em;
+}
+
+.d120-departure-time {
+    position: relative;
+    top: -0.1em;
+    display: inline-block;
+    width: 3.7em;
+    margin-right: 0.4em;
+}
+
+.d120-departure-product {
+    display: inline-block;
+    min-width: 3.9em;
+    margin-right: 0.5em;
+}
+.d120-departure-product-label {
+    display: inline-block;
+    min-width: 2em;
+    padding: 0.1em;
+    text-align: center;
+    background-color: yellow;
+    border: 1px solid black;
+    border-radius: 0.5em;
+}
+
+.d120-departure-destination {
+}

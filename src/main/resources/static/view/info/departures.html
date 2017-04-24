@@ -1,3 +1,15 @@
 <div>
-    <h1>Departures</h1>
+    <h3 class="d120-info-title"><img class="d120-busstop-icon" src="/static/images/busstop64.png"> {{ DASHBOARD.station.id }}</h3>
+    <div class="d120-departures">
+        <div id="d120-departure-{{ i }}" class="d120-departure col-lg-3 col-md-4 col-sm-6 col-xs-12 {{ getSeverity(dep) }}" ng-repeat="(i, dep) in departures">
+            <div class="well well-sm">
+                <span class="d120-departure-time label label-{{ getSeverity(dep) }}">{{ dep.plannedTime | date : 'HH:mm' }}</span>
+                <span class="d120-departure-product">
+                    <img class="d120-transport-icon" src="{{ '/static/images/' + dep.line.product.toLowerCase() + '64.png' }}" title="{{ dep.line.product }}">
+                    <span class="d120-departure-product-label">{{ dep.line.label }}</span>
+                </span>
+                <span class="d120-departure-destination">{{ (dep.destination.place ? dep.destination.place + ' ' : '') + dep.destination.name }}</span>
+            </div>
+        </div>
+    </div>
 </div>

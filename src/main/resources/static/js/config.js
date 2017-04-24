@@ -1,13 +1,23 @@
 'use strict';
 
 window.DASHBOARD = {
-    interval: 1000,
+    interval: 10,
+    station: {
+        id: 'Darmstadt Willy-Brandt-Platz',
+        time: {
+            critical: 3,
+            warning: 8
+        }
+    },
     infos: [{
-        name: 'departures'
+        name: 'departures',
+        isActive: function () {
+            return true;
+        }
     }, {
         name: 'pizzaPad',
         isActive: function () {
-            return false;
+            return true;
         }
     }]
 };
