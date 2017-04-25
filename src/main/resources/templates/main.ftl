@@ -13,13 +13,14 @@
     <!-- Custom CSS. -->
     <link rel="stylesheet" href="/static/css/news.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/info-cafeteria.css">
     <link rel="stylesheet" href="/static/css/info-departures.css">
     <link rel="stylesheet" href="/static/css/info-pizzaPad.css">
     <!-- JavaScript. -->
     <script src="/static/jquery/dist/jquery.min.js"></script>
     <script src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/static/angular/angular.min.js"></script>
-    <script src="/static/angular-animate/angular-animate.min.js"></script>
+    <script src="/static/angular-i18n/angular-locale_de-de.js"></script>
     <script src="/static/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script src="/static/angular-route/angular-route.min.js"></script>
     <!-- Custom JavaScript. -->
@@ -27,6 +28,7 @@
     <script src="/static/js/app.js"></script>
     <script src="/static/js/controller/carouselController.js"></script>
     <script src="/static/js/controller/newsController.js"></script>
+    <script src="/static/js/controller/info/cafeteriaController.js"></script>
     <script src="/static/js/controller/info/departuresController.js"></script>
     <script src="/static/js/controller/info/pizzaPadController.js"></script>
 </head>
@@ -41,6 +43,9 @@
             </div>
             <div ng-show="shownInfo.name === 'pizzaPad' && shownInfo.isActive()">
                 <div ng-controller="pizzaPadController" ng-include="'/static/view/info/pizzaPad.html'"></div>
+            </div>
+            <div ng-show="shownInfo.name === 'cafeteria' && shownInfo.isActive()">
+                <div ng-controller="cafeteriaController" ng-include="'/static/view/info/cafeteria.html'"></div>
             </div>
         </div>
         <div id="d120-news" ng-controller="newsController" class="animation-container">

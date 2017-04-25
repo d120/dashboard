@@ -19,6 +19,12 @@ window.DASHBOARD = {
             return true;
         }
     }, {
+        name: 'cafeteria',
+        interval: ${cafeteriaInterval},
+        isActive: function () {
+            return true;
+        }
+    }, {
         name: 'pizzaPad',
         interval: ${pizzaInterval},
         isActive: function () {

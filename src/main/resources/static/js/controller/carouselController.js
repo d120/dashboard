@@ -5,7 +5,7 @@ var app = angular.module('dashboardApp');
 app.controller('carouselController', ['$scope', '$timeout', function ($scope, $timeout) {
     $scope.infos = DASHBOARD.infos;
 
-    $scope.current = 0;
+    $scope.current = 1;
     var next = function () {
         var current = $scope.current;
         do {

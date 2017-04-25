@@ -1,0 +1,12 @@
+<div>
+    <h3 class="d120-info-title">Cafeteria</h3>
+    <div class="d120-meals">
+        <div ng-repeat="category in categories">
+            <div class="d120-meal well well-sm" ng-repeat="meal in category.meals">
+                <span class="d120-meal-category label label-default">{{ category.name }}</span>
+                <span class="d120-meal-name">{{ meal.name }}</span>
+                <span class="d120-meal-price">{{ meal.price / 100 | currency }}</span>
+            </div>
+        </div>
+    </div>
+</div>

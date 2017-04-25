@@ -1,0 +1,13 @@
+.d120-meal-category {
+    position: relative;
+    display: inline-block;
+    top: -0.1em;
+    width: 10em;
+    margin-right: 1em;
+}
+.d120-meal-name {
+
+}
+.d120-meal-price {
+    float: right;
+}

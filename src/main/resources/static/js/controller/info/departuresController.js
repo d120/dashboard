@@ -32,6 +32,7 @@ app.controller('departuresController', ['$scope', '$http', '$interval', function
         }
     };
 
+    // 30 seconds
     $interval(loadDepartures, 30 * 1000);
     loadDepartures();
 }]);
