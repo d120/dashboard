@@ -1,0 +1,37 @@
+{"properties": [
+  {
+    "name": "frontend.departures.interval",
+    "type": "int",
+    "description": "How long (in seconds) the departures page should be shown."
+  },
+  {
+    "name": "frontend.departures.station-name",
+    "type": "java.lang.String",
+    "description": "The name of the station to display on the departures info page."
+  },
+  {
+    "name": "frontend.departures.time.critical",
+    "type": "int",
+    "description": "The time (in minutes) when a departure should be marked as critical."
+  },
+  {
+    "name": "frontend.departures.time.warning",
+    "type": "int",
+    "description": "The time (in minutes) when a departure should be marked as warning."
+  },
+  {
+    "name": "frontend.pizza.interval",
+    "type": "int",
+    "description": "How long (in seconds) the pizza-pad page should be shown."
+  },
+  {
+    "name": "frontend.news.switch-interval",
+    "type": "int",
+    "description": "The interval (in seconds) for switching the news ticker."
+  },
+  {
+    "name": "frontend.cafeteria.interval",
+    "type": "java.lang.String",
+    "description": "How long (in seconds) the cafeteria page should be shown."
+  }
+]}

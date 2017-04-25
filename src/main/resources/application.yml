@@ -4,3 +4,17 @@ spring:
       WRAP_ROOT_VALUE: true
     deserialization:
       UNWRAP_ROOT_VALUE: true
+      FAIL_ON_UNKNOWN_PROPERTIES: false
+frontend:
+  departures:
+    interval: 10
+    station-name: "Darmstadt Willy-Brandt-Platz"
+    time:
+      critical: 3
+      warning: 8
+  pizza:
+    interval: 5
+  cafeteria:
+    interval: 5
+  news:
+    switch-interval: 5

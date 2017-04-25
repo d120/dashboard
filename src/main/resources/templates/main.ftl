@@ -11,6 +11,7 @@
     <!-- CSS. -->
     <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap.min.css">
     <!-- Custom CSS. -->
+    <link rel="stylesheet" href="/static/css/news.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/info-departures.css">
     <link rel="stylesheet" href="/static/css/info-pizzaPad.css">
@@ -18,12 +19,14 @@
     <script src="/static/jquery/dist/jquery.min.js"></script>
     <script src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/static/angular/angular.min.js"></script>
+    <script src="/static/angular-animate/angular-animate.min.js"></script>
     <script src="/static/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script src="/static/angular-route/angular-route.min.js"></script>
     <!-- Custom JavaScript. -->
-    <script src="/static/js/config.js"></script>
+    <#include "config.ftl">
     <script src="/static/js/app.js"></script>
     <script src="/static/js/controller/carouselController.js"></script>
+    <script src="/static/js/controller/newsController.js"></script>
     <script src="/static/js/controller/info/departuresController.js"></script>
     <script src="/static/js/controller/info/pizzaPadController.js"></script>
 </head>
@@ -39,6 +42,9 @@
             <div ng-show="shownInfo.name === 'pizzaPad' && shownInfo.isActive()">
                 <div ng-controller="pizzaPadController" ng-include="'/static/view/info/pizzaPad.html'"></div>
             </div>
+        </div>
+        <div id="d120-news" ng-controller="newsController" class="animation-container">
+            <span>+++ {{ shownNews }} +++</span>
         </div>
     </div>
 </body>
