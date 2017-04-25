@@ -1,0 +1,13 @@
+Website: http://www.fromtexttospeech.com
+
+Request to get HTML containing link to MP3 (German):
+POST http://www.fromtexttospeech.com
+Content-Type: application/x-www-form-urlencoded
+Form Data:
+    input_text = <text>
+    language = German
+    voice = IVONA Hans22 (German)
+    speed = 0
+    action = process_text
+
+MP3 file location: .input_text a
