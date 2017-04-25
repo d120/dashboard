@@ -2,9 +2,7 @@ package de.d120.dashboard.rest;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -18,11 +16,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import de.d120.dashboard.dto.DeparturesDTO;
 import de.schildbach.pte.NetworkProvider;
 import de.schildbach.pte.dto.Departure;
 import de.schildbach.pte.dto.QueryDeparturesResult;
 import de.schildbach.pte.dto.QueryDeparturesResult.Status;
 
+/**
+ * The REST controller for <code>/api/departures</code>.
+ *
+ * @author Fabian Damken
+ */
 @RestController
 @RequestMapping("/api/departures")
 public class DeparturesRestController {
@@ -52,7 +56,7 @@ public class DeparturesRestController {
      */
     @GetMapping(path = "/{stationId}",
                 params = "limit")
-    public ResponseEntity<Map<String, Object>> retrieveDepartures(@PathVariable final String stationId,
+    public ResponseEntity<DeparturesDTO> retrieveDepartures(@PathVariable final String stationId,
             @RequestParam("limit") final Optional<Integer> maxDepartures)
             throws IOException {
         final QueryDeparturesResult queryResult = this.networkProvider.queryDepartures(stationId, new Date(),
@@ -66,9 +70,7 @@ public class DeparturesRestController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
 
-        final Map<String, Object> result = new HashMap<>();
         final List<Departure> departures = queryResult.findStationDepartures(stationId).departures;
-        result.put("departures", departures);
-        return ResponseEntity.ok(result);
+        return ResponseEntity.ok(new DeparturesDTO(departures));
     }
 }
