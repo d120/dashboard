@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -43,9 +43,10 @@ public class CafeteriaRestController {
             }
             categoryMeals.add(meal);
         }
-        final List<MealCategoryDTO> result = categories.entrySet().stream()
-                .map(entry -> new MealCategoryDTO(entry.getKey(), entry.getValue()))
-                .collect(Collectors.toList());
+        final List<MealCategoryDTO> result = new ArrayList<>();
+        for (final Entry<String, List<Meal>> entry : categories.entrySet()) {
+            result.add(new MealCategoryDTO(entry.getKey(), entry.getValue()));
+        }
         return ResponseEntity.ok(new MealCategoryListDTO(result));
     }
 }

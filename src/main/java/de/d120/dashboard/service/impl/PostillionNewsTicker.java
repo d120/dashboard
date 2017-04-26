@@ -1,9 +1,8 @@
 package de.d120.dashboard.service.impl;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,10 +50,11 @@ public class PostillionNewsTicker implements NewsTickerService {
         if (result == null || result.getEntries() == null) {
             return Collections.emptyList();
         }
-        return result.getEntries().stream()
-                .map(PostillionTickerEntryDTO::getText)
-                .filter(Objects::nonNull)
-                .collect(Collectors.toList());
+        final List<String> resultList = new ArrayList<>();
+        for (final PostillionTickerEntryDTO entry : result.getEntries()) {
+            resultList.add(entry.getText());
+        }
+        return resultList;
     }
 
     @SuppressWarnings("javadoc")

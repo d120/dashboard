@@ -1,8 +1,8 @@
 package de.d120.dashboard.service.impl;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -39,16 +39,22 @@ public class TuDarmstadtStadtmitteCafeteriaService implements CafeteriaService {
                 .get();
         final Elements mealCategories = document.select(".aw-meal-category");
 
-        return mealCategories.stream()
-                .flatMap(mealCategory -> this.parseMealCategory(mealCategory).stream())
-                .collect(Collectors.toList());
+        final List<Meal> result = new ArrayList<>();
+        for (final Element mealCategory : mealCategories) {
+            for (final Meal meal : this.parseMealCategory(mealCategory)) {
+                result.add(meal);
+            }
+        }
+        return result;
     }
 
     private List<Meal> parseMealCategory(final Element mealCategory) {
         final String name = mealCategory.select(".aw-meal-category-name").text();
-        return mealCategory.select(".aw-meal").stream()
-                .map(mealElement -> this.parseMeal(name, mealElement))
-                .collect(Collectors.toList());
+        final List<Meal> meals = new ArrayList<>();
+        for (final Element meal : mealCategory.select(".aw-meal")) {
+            meals.add(this.parseMeal(name, meal));
+        }
+        return meals;
     }
 
     private Meal parseMeal(final String category, final Element meal) {

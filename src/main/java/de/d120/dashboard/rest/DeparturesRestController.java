@@ -3,7 +3,6 @@ package de.d120.dashboard.rest;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,10 +56,12 @@ public class DeparturesRestController {
     @GetMapping(path = "/{stationId}",
                 params = "limit")
     public ResponseEntity<DeparturesDTO> retrieveDepartures(@PathVariable final String stationId,
-            @RequestParam("limit") final Optional<Integer> maxDepartures)
+            @RequestParam(name = "limit",
+                          required = false,
+                          defaultValue = "25") final int maxDepartures)
             throws IOException {
         final QueryDeparturesResult queryResult = this.networkProvider.queryDepartures(stationId, new Date(),
-                maxDepartures.orElse(25), false);
+                maxDepartures, false);
         if (queryResult.status == Status.INVALID_STATION) {
             return ResponseEntity.notFound().build();
         }
