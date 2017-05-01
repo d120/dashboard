@@ -9,3 +9,14 @@
     font-weight: 600;
     text-align: center;
 }
+
+#d120-news-copyright {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 0.4em;
+    margin: 0 0.1em 0.1em 0;
+}
+#d120-news-copyright a {
+    color: white;
+}

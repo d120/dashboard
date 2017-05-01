@@ -50,6 +50,7 @@
         </div>
         <div id="d120-news" ng-controller="newsController" class="animation-container">
             <span>+++ {{ shownNews }} +++</span>
+            <span id="d120-news-copyright">Powered by <a href="http://www.der-postillon.com">http://www.der-postillon.com</a></span>
         </div>
     </div>
 </body>
