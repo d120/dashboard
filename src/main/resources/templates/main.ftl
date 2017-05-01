@@ -38,13 +38,13 @@
             <!-- Content -->
         </div>
         <div ng-controller="carouselController">
-            <div ng-show="shownInfo.name === 'departures' && shownInfo.isActive()">
+            <div ng-show="shownInfo.name === 'departures'">
                 <div ng-controller="departuresController" ng-include="'/static/view/info/departures.html'"></div>
             </div>
-            <div ng-show="shownInfo.name === 'pizzaPad' && shownInfo.isActive()">
+            <div ng-show="shownInfo.name === 'pizzaPad'">
                 <div ng-controller="pizzaPadController" ng-include="'/static/view/info/pizzaPad.html'"></div>
             </div>
-            <div ng-show="shownInfo.name === 'cafeteria' && shownInfo.isActive()">
+            <div ng-show="shownInfo.name === 'cafeteria'">
                 <div ng-controller="cafeteriaController" ng-include="'/static/view/info/cafeteria.html'"></div>
             </div>
         </div>
