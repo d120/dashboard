@@ -35,6 +35,7 @@ public class TuDarmstadtStadtmitteCafeteriaService implements CafeteriaService {
     @Override
     public List<Meal> retrieveMeals() throws IOException {
         final Document document = Jsoup.connect(TuDarmstadtStadtmitteCafeteriaService.URL_CAFETERIA)
+                .validateTLSCertificates(false)
                 .userAgent("Mozilla")
                 .get();
         final Elements mealCategories = document.select(".aw-meal-category");
