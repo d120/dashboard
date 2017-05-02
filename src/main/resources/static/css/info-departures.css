@@ -12,8 +12,8 @@
     margin: 0;
     padding: 0.5em;
 }
-.d120-departure.default {
-    opacity: 0.5;
+.d120-departure.default, .d120-departure.danger {
+    display: none;
 }
 
 .d120-transport-icon {
@@ -42,7 +42,7 @@
 .d120-departure-product-label {
     display: inline-block;
     min-width: 2em;
-    padding: 0.1em;
+    padding: 0.2em;
     text-align: center;
     background-color: yellow;
     border: 1px solid black;
