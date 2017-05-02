@@ -10,7 +10,7 @@ app.controller('departuresController', ['$scope', '$http', '$interval', function
     var loadDepartures = function () {
         $http.get('/api/departures/' + encodeURIComponent(DASHBOARD.station.id), {
             params: {
-                limit: 20
+                limit: 50
             }
         }).then(function (response) {
             $scope.departures = response.data.departures;
