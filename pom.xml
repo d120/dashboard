@@ -5,7 +5,7 @@
 
 	<groupId>de.d120.dashboard</groupId>
 	<artifactId>dashboard</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>D120 Dashboard</name>
