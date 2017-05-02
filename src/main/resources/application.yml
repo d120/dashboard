@@ -17,4 +17,4 @@ frontend:
   cafeteria:
     interval: 5
   news:
-    switch-interval: 5
+    switch-interval: 10
